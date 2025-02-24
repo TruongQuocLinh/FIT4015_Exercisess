@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biểu mẫu đăng ký</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Biểu mẫu đăng ký</h2>
+    <form id="registerForm">
+        <label>Tên:</label><br>
+        <input type="text" id="name"><br>
+        <span class="error" id="nameError"></span><br>
+
+        <label>Email:</label><br>
+        <input type="text" id="email"><br>
+        <span class="error" id="emailError"></span><br>
+
+        <label>Mật khẩu:</label><br>
+        <input type="password" id="password"><br>
+        <span class="error" id="passwordError"></span><br>
+
+        <button type="submit">Gửi</button>
+    </form>
+
+    <script>
+        $(document).ready(function() {
+            $("#registerForm").submit(function(event) {
+                event.preventDefault();
+                $(".error").text(""); 
+
+                let name = $("#name").val().trim();
+                let email = $("#email").val().trim();
+                let password = $("#password").val().trim();
+                let isValid = true;
+
+                if (name === "") {
+                    $("#nameError").text("Tên không được để trống.");
+                    isValid = false;
+                }
+
+                let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!emailPattern.test(email)) {
+                    $("#emailError").text("Email không hợp lệ.");
+                    isValid = false;
+                }
+
+                if (password.length < 6) {
+                    $("#passwordError").text("Mật khẩu phải có ít nhất 6 ký tự.");
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    alert("Đăng ký thành công!");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
