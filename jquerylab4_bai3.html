@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Điều Hướng Đổ Xuống</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .menu {
+            list-style-type: none;
+            padding: 0;
+            background: #333;
+            display: inline-block;
+        }
+        .menu > li {
+            position: relative;
+            display: inline-block;
+            padding: 15px 20px;
+            color: white;
+            cursor: pointer;
+        }
+        .submenu {
+            list-style-type: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #555;
+            padding: 0;
+            min-width: 150px;
+            display: none;
+        }
+        .submenu li {
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+        }
+        .submenu li:hover {
+            background: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <ul class="menu">
+        <li>
+            Mục 1
+            <ul class="submenu">
+                <li>Mục 1.1</li>
+                <li>Mục 1.2</li>
+            </ul>
+        </li>
+        <li>
+            Mục 2
+            <ul class="submenu">
+                <li>Mục 2.1</li>
+                <li>Mục 2.2</li>
+            </ul>
+        </li>
+        <li>
+            Mục 3
+            <ul class="submenu">
+                <li>Mục 3.1</li>
+                <li>Mục 3.2</li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        $(document).ready(function() {
+            $(".menu > li").hover(
+                function() {
+                    $(this).find(".submenu").stop(true, true).slideDown(300);
+                }, 
+                function() {
+                    $(this).find(".submenu").stop(true, true).slideUp(300);
+                }
+            );
+        });
+    </script>
+
+</body>
+</html>
