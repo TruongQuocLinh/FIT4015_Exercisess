@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm và Làm nổi bật</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Công cụ Tìm kiếm</h1>
+    <input type="text" id="searchInput" placeholder="Nhập từ khóa">
+    <button onclick="highlightText()">Tìm kiếm</button>
+    <p id="content">
+        Đại học Đại Nam là trường đại học ứng dụng, phát triển theo định hướng khởi nghiệp và đổi mới sáng tạo; đa ngành, đa lĩnh vực linh hoạt theo yêu cầu phát triển của đất nước và hội nhập quốc tế. 
+    
+    <script>
+        function highlightText() {
+            let input = document.getElementById("searchInput").value;
+            let content = document.getElementById("content").innerHTML;
+            
+            let regex = new RegExp(`(${input})`, "gi");
+            let newContent = content.replace(/<span class="highlight">(.*?)<\/span>/gi, "$1");
+            newContent = newContent.replace(regex, '<span class="highlight">$1</span>');
+            
+            document.getElementById("content").innerHTML = newContent;
+        }
+    </script>
+</body>
+</html>

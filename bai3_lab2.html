@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy Tính Đơn Giản</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Máy Tính Đơn Giản</h1>
+    <input type="number" id="num1" placeholder="Nhập số thứ nhất">
+    <input type="number" id="num2" placeholder="Nhập số thứ hai">
+    <br>
+    <button onclick="calculate('+')">Cộng</button>
+    <button onclick="calculate('-')">Trừ</button>
+    <button onclick="calculate('*')">Nhân</button>
+    <button onclick="calculate('/')">Chia</button>
+    <h2 id="result">Kết quả: </h2>
+    
+    <script>
+        function calculate(operator) {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let result;
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById("result").textContent = "Vui lòng nhập số hợp lệ!";
+                return;
+            }
+            
+            switch (operator) {
+                case '+': result = num1 + num2; break;
+                case '-': result = num1 - num2; break;
+                case '*': result = num1 * num2; break;
+                case '/': 
+                    if (num2 === 0) {
+                        document.getElementById("result").textContent = "Không thể chia cho 0!";
+                        return;
+                    }
+                    result = num1 / num2; 
+                    break;
+            }
+            
+            document.getElementById("result").textContent = "Kết quả: " + result;
+        }
+    </script>
+</body>
+</html> 

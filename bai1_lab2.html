@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bộ Đếm Thời Gian</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #timer {
+            font-size: 2em;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bộ Đếm Thời Gian</h1>
+    <input type="number" id="timeInput" placeholder="Nhập số giây">
+    <button onclick="startCountdown()">Bắt đầu</button>
+    <div id="timer"></div>
+    
+    <script>
+        let countdown;
+        function startCountdown() {
+            clearInterval(countdown);
+            let time = document.getElementById("timeInput").value;
+            let timerDisplay = document.getElementById("timer");
+            
+            if (time <= 0 || isNaN(time)) {
+                timerDisplay.textContent = "Vui lòng nhập số giây hợp lệ!";
+                return;
+            }
+            
+            timerDisplay.textContent = time;
+            countdown = setInterval(() => {
+                time--;
+                timerDisplay.textContent = time;
+                if (time <= 0) {
+                    clearInterval(countdown);
+                    timerDisplay.textContent = "Time's up!";
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
