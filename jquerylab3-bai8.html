@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thời gian biểu</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid black; padding: 10px; text-align: center; }
+        .details { display: none; background-color: #f9f9f9; }
+        .hide-btn { cursor: pointer; color: blue; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h2>Thời gian biểu</h2>
+    <table>
+        <tr>
+            <th>Thứ</th>
+            <th>Môn học</th>
+        </tr>
+        <tr>
+            <td>Thứ Hai</td>
+            <td class="subject">Toán</td>
+        </tr>
+        <tr class="details">
+            <td colspan="2">Giáo viên: Thầy Huy | Phòng: 101 <span class="hide-btn">Ẩn</span></td>
+        </tr>
+        <tr>
+            <td>Thứ Ba</td>
+            <td class="subject">Văn</td>
+        </tr>
+        <tr class="details">
+            <td colspan="2">Giáo viên: Cô Ba | Phòng: 102 <span class="hide-btn">Ẩn</span></td>
+        </tr>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            $('.subject').click(function() {
+                $(this).closest('tr').next('.details').toggle();
+            });
+
+            $('.hide-btn').click(function() {
+                $(this).closest('.details').hide();
+            });
+        });
+    </script>
+</body>
+</html>

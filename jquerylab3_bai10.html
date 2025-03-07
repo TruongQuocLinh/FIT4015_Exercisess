@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng thời tiết</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #weather-info { margin-top: 20px; font-size: 18px; font-weight: bold; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h2>Tra cứu thời tiết</h2>
+    <input type="text" id="city" placeholder="Nhập tên thành phố">
+    <button id="get-weather">Xem thời tiết</button>
+    <p id="weather-info"></p>
+
+    <script>
+        $(document).ready(function() {
+            $('#get-weather').click(function() {
+                let city = $('#city').val().trim();
+                if (city === '') {
+                    $('#weather-info').html('<span class="error">Vui lòng nhập tên thành phố!</span>');
+                    return;
+                }
+                
+                let apiKey = 'YOUR_API_KEY';
+                let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=vi`;
+                
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    success: function(data) {
+                        let temp = data.main.temp;
+                        let condition = data.weather[0].description;
+                        $('#weather-info').html(`Nhiệt độ: ${temp}°C<br>Điều kiện: ${condition}`);
+                    },
+                    error: function() {
+                        $('#weather-info').html('<span class="error">Không tìm thấy thông tin thời tiết!</span>');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

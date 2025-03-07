@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm sản phẩm</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .hidden { display: none; color: red; }
+    </style>
+</head>
+<body>
+    <h2>Danh sách sản phẩm</h2>
+    <input type="text" id="search" placeholder="Nhập từ khóa...">
+    <ul id="product-list">
+        <li>Táo</li>
+        <li>Chuối</li>
+        <li>Nho</li>
+        <li>Xoài</li>
+        <li>Cam</li>
+    </ul>
+    <p id="not-found" class="hidden">Không tìm thấy sản phẩm</p>
+
+    <script>
+        $(document).ready(function() {
+            $('#search').on('input', function() {
+                let keyword = $(this).val().toLowerCase();
+                let found = false;
+                
+                $('#product-list li').each(function() {
+                    if ($(this).text().toLowerCase().includes(keyword)) {
+                        $(this).show();
+                        found = true;
+                    } else {
+                        $(this).hide();
+                    }
+                });
+                
+                $('#not-found').toggle(!found);
+            });
+        });
+    </script>
+</body>
+</html>

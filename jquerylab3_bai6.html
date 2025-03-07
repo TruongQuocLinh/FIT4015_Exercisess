@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Thư viện ảnh</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+.thumbnail {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  cursor: pointer;
+}
+#large-image {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+#close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div id="thumbnails">
+  <img src="anh-2-cho-di-may-bay-260.jpg" class="thumbnail" data-large="anh-2-cho-di-may-bay-260.jpg">
+  <img src="anh-cho-hai-huoc-bua-cam-bong-cuoi.jpg" class="thumbnail" data-large="anh-cho-hai-huoc-bua-cam-bong-cuoi.jpg">
+  <img src="c99238533bc9f307a6e6bacffe19636b.jpg" class="thumbnail" data-large="c99238533bc9f307a6e6bacffe19636b.jpg">
+</div>
+
+<div id="large-image">
+  <img src="" id="large-img">
+  <span id="close-button">Đóng</span>
+</div>
+
+<script>
+$(document).ready(function() {
+  $(".thumbnail").click(function() {
+    let largeImageSrc = $(this).data("large");
+    $("#large-img").attr("src", largeImageSrc);
+    $("#large-image").fadeIn();
+  });
+
+  $("#close-button").click(function() {
+    $("#large-image").fadeOut();
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công cụ chọn màu</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .color-box { display: inline-block; width: 50px; height: 50px; margin: 5px; cursor: pointer; border: 1px solid #000; }
+        #color-code { margin-top: 20px; font-size: 18px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h2>Chọn màu</h2>
+    <div id="color-palette">
+        <div class="color-box" style="background-color: red;" data-color="red"></div>
+        <div class="color-box" style="background-color: blue;" data-color="blue"></div>
+        <div class="color-box" style="background-color: green;" data-color="green"></div>
+        <div class="color-box" style="background-color: yellow;" data-color="yellow"></div>
+        <div class="color-box" style="background-color: purple;" data-color="purple"></div>
+    </div>
+    <p id="color-code">Mã màu: #FFFFFF</p>
+
+    <script>
+        $(document).ready(function() {
+            $('.color-box').click(function() {
+                let color = $(this).data('color');
+                $('body').css('background-color', color);
+                $('#color-code').text('Mã màu: ' + color);
+            });
+        });
+    </script>
+</body>
+</html>
