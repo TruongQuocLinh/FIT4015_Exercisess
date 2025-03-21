@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sản phẩm</title>
+    <link rel="stylesheet" href="admin.css">
+    <script src="index.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Quản Trị Viên Nhà Hàng</h1>
+    </header>
+
+    <div class="sidebar">
+        <h3>Menu</h3>
+        <a href="index.html">Trang Chủ</a>
+        <a href="san-pham.html">Quản Lý Sản Phẩm</a>
+        <a href="don-hang.html">Quản Lý Đơn Hàng</a>
+        <a href="khach-hang.html">Quản Lý Khách Hàng</a>
+        <a href="doanh-thu.html">Quản Lý Doanh Thu</a>
+        <a href="cai-dat.html">Cài Đặt</a>
+    </div> 
+    <div class="content">
+        <section class="card">
+            <h2>Quản Lý Sản Phẩm</h2>
+            <p>Thông tin số liệu:</p>
+            <table>
+                <tr>
+                    <th>Tên Sản Phẩm</th>
+                    <th>Giá</th>
+                    <th>Trạng Thái</th>
+                </tr>
+                <tr>
+                    <td>Nhẫn Kim Cương</td>
+                    <td>50,000,000 VND</td>
+                    <td>Có hàng</td>
+                </tr>
+                <tr>
+                    <td>Lắc Tay Bạc</td>
+                    <td>5,000,000 VND</td>
+                    <td>Có hàng</td>
+                </tr>
+                <tr>
+                    <td>Dây Chuyền Vàng</td>
+                    <td>10,000,000 VND</td>
+                    <td>Có hàng</td>
+                </tr>
+                <tr>
+                    <td>Vòng Cổ Đá Quý</td>
+                    <td>15,000,000 VND</td>
+                    <td>Đã hết hàng</td>
+                </tr>
+            </table>
+            <button>Nhập thêm sản phẩm</button>
+        </section>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const addButton = document.querySelector('button');
+    const table = document.querySelector('table');
+
+    addButton.addEventListener('click', () => {
+        const newRow = document.createElement('tr');
+
+        const nameCell = document.createElement('td');
+        nameCell.textContent = prompt('Nhập tên sản phẩm:');
+        newRow.appendChild(nameCell);
+
+        const priceCell = document.createElement('td');
+        priceCell.textContent = prompt('Nhập giá sản phẩm (VND):');
+        newRow.appendChild(priceCell);
+
+        const statusCell = document.createElement('td');
+        statusCell.textContent = prompt('Nhập trạng thái (Có hàng/Đã hết hàng):');
+        newRow.appendChild(statusCell);
+
+        table.appendChild(newRow);
+    });
+});
+    </script>
+    <footer>
+        <p>© 2025 Nhà Hàng | Quản Trị Viên</p>
+    </footer>
+
+</body>
+</html>
+ 

@@ -1,0 +1,450 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    background-color:#00FF00;
+    color: #181717;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 34px;
+    width: 100%;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+
+.search-bar input[type="text"] {
+    padding: 6px;
+    font-size: 14px;
+}
+
+.search-bar button {
+    padding: 7px;
+    background-color: #0000FF;
+    color: #f8f4f4;
+    border: none;
+    cursor: pointer;
+}
+
+.user a, .cart a {
+    color:#0000FF;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.nav {
+    background-color:#FF0000;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav a {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    background-color: #0b0b0b;
+    color: black;
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content h2 {
+    color:#000000;
+}
+
+.content p {
+    color:#000000;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.products img {
+    width: 200px;
+    height: auto;
+    margin: 10px;
+}
+
+.location {
+    background-color: #ea0b0b;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.location h3 {
+    color:#000000;
+}
+
+.location p {
+    color: #000000;
+}
+
+footer {
+    background-color:#000000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+/* Phần giới thiệu */
+section {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+section h2 {
+    color: #b8860b;
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+/* Bộ sưu tập ảnh */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Sidebar */
+aside {
+    background: #fff;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+aside h3 {
+    color: #b8860b;
+    margin-bottom: 10px;
+}
+
+aside p {
+    font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Giới thiệu Linh Rose */
+#about {
+    padding: 40px 20px;
+    background-color: #fff5f5;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#about h2 {
+    color: #d62828;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+#about h3 {
+    color: #b71c1c;
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+#about ul {
+    list-style: none;
+    padding: 0;
+}
+
+#about ul li {
+    font-size: 18px;
+    padding: 10px;
+    background: #ffe0e0;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+#about ul li::before {
+    content: "✔";
+    color: #d62828;
+    font-weight: bold;
+    margin-right: 10px;
+}
+/* Thiết lập chung */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Tiêu đề chính */
+h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #b71c1c;
+    margin-bottom: 10px;
+}
+
+/* Đoạn mô tả */
+#products p {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Định dạng cho phần sản phẩm */
+#products {
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+#products h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+#products p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Grid sản phẩm */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* Sản phẩm */
+.product-item {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-item h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.product-item p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+button a:hover {
+    text-decoration: underline;
+}
+
+/* CSS cho mục Liên Hệ */
+#contact {
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contact h2 {
+    color: #d7263d;
+    margin-bottom: 10px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.contact-info p {
+    color: #5e5a5a;
+    font-size: 16px;
+    margin: 5px 0;
+    width: 100%;
+    text-align: justify;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-top: 10px;
+    width: 100%;
+    text-align: left;
+    max-width: 500px;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form button {
+    background-color: #d7263d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #a71d2a;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    #contact {
+        padding: 30px 10px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 90%;
+    }
+}
+.location {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.location h3 {
+    color: #333;
+}
+
+.location p {
+    color:#000000;
+}
+
+footer {
+    background-color: #000000;
+    color: hsl(0, 25%, 98%);
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}

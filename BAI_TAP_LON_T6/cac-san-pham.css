@@ -1,0 +1,107 @@
+/* Định dạng cho container */
+.container {
+    width: 60%; /* Giảm kích thước container */
+    margin: auto;
+    padding: 10px; /* Giảm padding */
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Giảm shadow */
+}
+
+/* Định dạng cho phần hình ảnh */
+.image-section {
+    position: relative;
+    text-align: center;
+}
+
+.image-section img {
+    width: 20%; /* Giảm kích thước hình ảnh */
+    height: auto;
+}
+
+.sold-out {
+    position: absolute;
+    top: 5px; /* Giảm khoảng cách từ trên */
+    left: 5px; /* Giảm khoảng cách từ trái */
+    background-color: red;
+    color: white;
+    padding: 3px; /* Giảm padding */
+    font-weight: bold;
+}
+
+/* Định dạng cho phần nội dung */
+.content-section {
+    padding: 10px; /* Giảm padding */
+}
+
+.content-section h1 {
+    font-size: 20px; /* Giảm kích thước chữ */
+    margin-bottom: 5px; /* Giảm khoảng cách dưới */
+}
+
+.price {
+    font-size: 16px; /* Giảm kích thước chữ */
+    color: green;
+    margin-bottom: 10px; /* Giảm khoảng cách dưới */
+}
+
+.NutDatHang {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px; /* Giảm padding */
+    border: none;
+    cursor: pointer;
+}
+
+.NutDatHang:hover {
+    background-color: #45a049;
+}
+
+/* Định dạng cho phần chi tiết */
+.details p {
+    margin: 5px 0; /* Giảm khoảng cách trên dưới */
+}
+
+/* Định dạng cho phần đánh giá */
+.rating {
+    margin-top: 10px; /* Giảm khoảng cách trên */
+}
+
+.rating-score {
+    display: flex;
+    align-items: center;
+}
+
+.rating-score .score {
+    font-size: 20px; /* Giảm kích thước chữ */
+    margin-right: 5px; /* Giảm khoảng cách phải */
+}
+
+.rating-score .stars {
+    color: gold;
+}
+
+.rating-details .bar {
+    display: flex;
+    align-items: center;
+    margin: 3px 0; /* Giảm khoảng cách trên dưới */
+}
+
+.rating-details .bar-fill {
+    height: 5px; /* Giảm chiều cao */
+    background-color: gold;
+    margin-right: 5px; /* Giảm khoảng cách phải */
+}
+
+/* Định dạng cho nút "Quay lại" */
+.back-button {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px; /* Giảm padding */
+    border: none;
+    cursor: pointer;
+    margin-top: 10px; /* Giảm khoảng cách trên */
+}
+
+.back-button:hover {
+    background-color: #d32f2f;
+}
